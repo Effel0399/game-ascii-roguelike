@@ -19,6 +19,21 @@ function create() {
     game.input.keyboard.addCallbacks(null, null, onKeyUp);
     // initialize map
     initMap();
+    // initialize screen
+    asciidisplay = [];
+    for (var y = 0; y < ROWS; y++) {
+        var newRow = [];
+        asciidisplay.push(newRow);
+        for (var x = 0; x < COLS; x++)
+            newRow.push(initCell('', x, y));
+    }
+    drawMap();
+}
+
+function initCell(chr, x, y) {
+    // add a single cell in a given position to the ascii display 
+    var style = { font: FONT + "px monospace", fill:"#fff"};
+    return game.add.text(FONT*0.6*x, FONT*y, chr, style);
 }
 
 function onKeyUp(event) {
@@ -46,4 +61,13 @@ function initMap() {
         }
         map.push(newRow);
     }
+}
+
+// the ascii display, as a 2d array of characters
+var asciidisplay;
+
+function drawMap() {
+    for (var y = 0; y < ROWS; y++)
+        for (var x = 0; x < COLS; x++)
+            asciidisplay[y][x].content = map[y][x];
 }
