@@ -5,7 +5,9 @@ This is a simple roguelike game made with javascript with the phaser framework.
 
 ### screenshot
 
-![](https://github.com/FNH99/game-simple-breakout/blob/main/img/screenshot-game.png)
+![](https://github.com/FNH99/game-ascii-roguelike/blob/main/img/screenshot-game.png)
+
+![](https://github.com/FNH99/game-ascii-roguelike/blob/main/img/screenshot-gameover.png)
 
 ### Links
 
